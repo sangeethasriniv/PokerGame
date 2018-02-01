@@ -1,0 +1,7 @@
+<suite name="PokerTests">
+	<test name="PokerListingTests">
+		<classes>
+			<class name="pokertests.TestHandListing" />
+		</classes>
+	</test>
+</suite>

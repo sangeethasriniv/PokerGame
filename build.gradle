@@ -1,0 +1,43 @@
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile 'org.json:json:20171018'   
+   	testCompile 'org.testng:testng:6.10'
+	        
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src"]
+        }
+    }
+    test{
+        java {
+            srcDirs = ["test"]
+        }  
+    }   
+}
+
+task run (type: JavaExec, dependsOn: classes){
+	standardInput = System.in
+   	main = 'play.PlayPoker'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+/*task execute(type:JavaExec) {
+   main = 'play.PlayPoker'
+  classpath = sourceSets.main.runtimeClasspath
+}*/
+
+test{
+	useTestNG {
+		useDefaultListeners = true
+        suites 'test/resources/testng.xml'
+	}
+	
+}

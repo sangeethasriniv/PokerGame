@@ -12,7 +12,7 @@ import org.json.*;
 public class PlayPoker {
 
 	public static void main(String[] args){
-		System.out.println("*****Enter Cards in Hand : eg: 2H, 5C, 9D, AS, JC *****");
+		System.out.println("*****Enter Cards in Hand : eg: 2H,5C,9D,AS,JC *****");
 		JSONArray jsonArrHand = new JSONArray(Arrays.asList(getInput()));
 		PokerHand pHand = new PokerHand(jsonArrHand);
 		System.out.println("*****Processing Input ******");

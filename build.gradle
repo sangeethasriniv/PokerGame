@@ -23,16 +23,16 @@ sourceSets {
     }   
 }
 
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+}
+
 task run (type: JavaExec, dependsOn: classes){
 	standardInput = System.in
    	main = 'play.PlayPoker'
     classpath = sourceSets.main.runtimeClasspath
 }
-
-/*task execute(type:JavaExec) {
-   main = 'play.PlayPoker'
-  classpath = sourceSets.main.runtimeClasspath
-}*/
 
 test{
 	useTestNG {
